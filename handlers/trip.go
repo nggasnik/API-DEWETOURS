@@ -388,8 +388,7 @@ func convertMultipleTripResponse(t []models.Trip, r *http.Request) []dto.TripRes
 		result.Description = trip.Description
 
 		for _, img := range trip.Image {
-			imgUrl := fmt.Sprintf("http://%s/uploads/img/%s", r.Host, img.FileName)
-			result.Images = append(result.Images, imgUrl)
+			result.Images = append(result.Images, img.FileName)
 		}
 
 		results = append(results, result)
@@ -414,8 +413,7 @@ func convertOneTripResponse(t models.Trip, r *http.Request) dto.TripResponse {
 	result.Description = t.Description
 
 	for _, img := range t.Image {
-		imgUrl := fmt.Sprintf("http://%s/uploads/img/%s", r.Host, img.FileName)
-		result.Images = append(result.Images, imgUrl)
+		result.Images = append(result.Images, img.FileName)
 	}
 
 	// fmt.Println(result.Images)
