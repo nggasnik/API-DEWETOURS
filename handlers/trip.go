@@ -8,7 +8,6 @@ import (
 	"erlangga/repositories"
 	"fmt"
 	"net/http"
-	"os"
 	"strconv"
 	"time"
 
@@ -65,9 +64,9 @@ func (h *handlerTrip) AddTrip(w http.ResponseWriter, r *http.Request) {
 		var ctx = context.Background()
 
 		// setup cloudinary credentials
-		var CLOUD_NAME = os.Getenv("dn6qjddsi")
-		var API_KEY = os.Getenv("886395169118187")
-		var API_SECRET = os.Getenv("8HT8ttZ1pieoceVQgFIyfM9Wxe4")
+		var CLOUD_NAME = "dn6qjddsi"
+		var API_KEY = "886395169118187"
+		var API_SECRET = "8HT8ttZ1pieoceVQgFIyfM9Wxe4"
 
 		// create new instance of cloudinary object using cloudinary credentials
 		cld, _ := cloudinary.NewFromParams(CLOUD_NAME, API_KEY, API_SECRET)
